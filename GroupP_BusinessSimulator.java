@@ -22,7 +22,22 @@ public class homecomfort2 {
         return subtotal;
     }
 
-    
+    // Method 2: Calculates the Total Amount
+    public static double calculateTotalAmount(double[] subtotals) {
+        double totalAmount = 0;
+        for (double subtotal : subtotals) {
+            totalAmount += subtotal;
+        }
+        return totalAmount;
+    }
+
+    // Method 3: Prints Receipt
+    public static void printReceipt(String[] items, int[] quantities, double[] subtotals) {
+        System.out.println("\n================ RECEIPT ================\n");
+        for (int i = 0; i < items.length; i++) {
+            System.out.println(items[i] + " x " + quantities[i] + " = UGX " + subtotals[i]);
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -59,16 +74,7 @@ public class homecomfort2 {
         }
 
         // Print receipt
-        System.out.println("\n================ RECEIPT ================\n");
-
-        /*for (int i = 0; i < items.length; i++) {
-            System.out.printf("%s x %d = UGX %,.2f%n", items[i], quantities[i], subtotals[i]);
-        }
-        */
-
-        for (int i = 0; i < items.length; i++) {
-            System.out.println(items[i] + " x " + quantities[i] + " = UGX " + subtotals[i]);
-        }
+        printReceipt(items, quantities, subtotals);
 
         System.out.println("\n------------------------------------------");
         System.out.printf("Total Amount: UGX %,.2f%n", totalAmount);
