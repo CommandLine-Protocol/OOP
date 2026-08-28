@@ -1,5 +1,6 @@
 public class Group_P_BusinessSimulator {
 
+    // Method to clacluate subtotal
     public static double calculateSubtotal(double price, int quantity, int itemIndex) {
         double subtotal = price * quantity;
 
@@ -14,6 +15,7 @@ public class Group_P_BusinessSimulator {
         return subtotal;
     }
 
+    // Method to calculate total amount
     public static double calculateTotalAmount(double[] subtotals) {
         double totalAmount = 0;
 
@@ -24,6 +26,7 @@ public class Group_P_BusinessSimulator {
         return totalAmount;
     }
 
+    // Method to print receipt
     public static void printReceipt(String[] items, int[] quantities, double[] subtotals) {
         System.out.println("\n================ RECEIPT ================\n");
 
@@ -32,6 +35,7 @@ public class Group_P_BusinessSimulator {
         }
     }
 
+    // Main method
     public static void main(String[] args) {
 
         System.out.println("===== Welcome to Home Comfort Furniture! =====\n");
