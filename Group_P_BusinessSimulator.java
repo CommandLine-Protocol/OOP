@@ -1,6 +1,5 @@
-public class GroupP_BusinessSimulator {
+public class Group_P_BusinessSimulator {
 
-    // Method 1: Calculates the discounted subtotal
     public static double calculateSubtotal(double price, int quantity, int itemIndex) {
         double subtotal = price * quantity;
 
@@ -15,7 +14,6 @@ public class GroupP_BusinessSimulator {
         return subtotal;
     }
 
-    // Method 2: Calculates the Total Amount
     public static double calculateTotalAmount(double[] subtotals) {
         double totalAmount = 0;
 
@@ -26,12 +24,11 @@ public class GroupP_BusinessSimulator {
         return totalAmount;
     }
 
-    // Method 3: Prints Receipt
     public static void printReceipt(String[] items, int[] quantities, double[] subtotals) {
         System.out.println("\n================ RECEIPT ================\n");
 
-        for (int i = 0; i < items.length; i++) {
-            System.out.println(items[i] + " x " + quantities[i] + " = UGX " + subtotals[i]);
+        for (int a = 0; a < items.length; a++) {
+            System.out.println(items[a] + " x " + quantities[a] + " = UGX " + subtotals[a]);
         }
     }
 
@@ -45,24 +42,21 @@ public class GroupP_BusinessSimulator {
 
         System.out.println("Available Items:");
 
-        for (int i = 0; i < items.length; i++) {
-            System.out.println((i + 1) + ". " + items[i] + "     UGX " + prices[i]);
+        for (int num = 0; num < items.length; num++) {
+            System.out.println((num + 1) + ". " + items[num] + "     UGX " + prices[num]);
         }
 
-        // Calculate subtotals
-        double[] subtotals = new double[items.length]; // array to store subtotals for each item
+        double[] subtotals = new double[items.length]; 
 
         for (int i = 0; i < items.length; i++) {
             subtotals[i] = calculateSubtotal(prices[i], quantities[i], i);
         }
 
-        // Calculate total using Method 2
         double totalAmount = calculateTotalAmount(subtotals);
 
-        // Print receipt using Method 3
         printReceipt(items, quantities, subtotals);
 
         System.out.println("\n------------------------------------------");
-        System.out.printf("Total Amount: UGX %,.2f%n", totalAmount); // use format to display total amount with commas and two decimal places
+        System.out.printf("Total Amount: UGX %.2f%n", totalAmount); 
     }
 }
